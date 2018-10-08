@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputView" customModule="NeksoTest" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="r9C-Jo-9Fp" id="xcb-Am-yMU"/>
+                <outlet property="input" destination="fHZ-R2-3C9" id="5bB-j6-UMb"/>
+                <outlet property="rootView" destination="iN0-l3-epB" id="qmi-tr-Oi3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StylableView" customModule="NeksoTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nN9-g3-Kpw" customClass="StylableView" customModule="NeksoTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="65" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r9C-Jo-9Fp" customClass="StylableImageView" customModule="NeksoTest" customModuleProvider="target">
+                            <rect key="frame" x="20" y="12.5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="6Q3-6m-Djo"/>
+                                <constraint firstAttribute="height" constant="25" id="7bt-vY-w3h"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="r9C-Jo-9Fp" firstAttribute="centerX" secondItem="nN9-g3-Kpw" secondAttribute="centerX" id="Dz5-8P-MN6"/>
+                        <constraint firstItem="r9C-Jo-9Fp" firstAttribute="centerY" secondItem="nN9-g3-Kpw" secondAttribute="centerY" id="RR7-tk-36K"/>
+                        <constraint firstAttribute="width" constant="65" id="U10-lf-aDz"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="whiteOpacityLeft"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTK-V9-cx7" customClass="StylableView" customModule="NeksoTest" customModuleProvider="target">
+                    <rect key="frame" x="68" y="0.0" width="307" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-R2-3C9" customClass="StylableTextField" customModule="NeksoTest" customModuleProvider="target">
+                            <rect key="frame" x="20" y="10" width="267" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fHZ-R2-3C9" firstAttribute="top" secondItem="KTK-V9-cx7" secondAttribute="top" constant="10" id="JN7-Yn-XHw"/>
+                        <constraint firstAttribute="bottom" secondItem="fHZ-R2-3C9" secondAttribute="bottom" constant="10" id="NOp-re-4LI"/>
+                        <constraint firstAttribute="trailing" secondItem="fHZ-R2-3C9" secondAttribute="trailing" constant="20" id="mJ8-O7-1cc"/>
+                        <constraint firstItem="fHZ-R2-3C9" firstAttribute="leading" secondItem="KTK-V9-cx7" secondAttribute="leading" constant="20" id="mgp-fS-0D7"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="whiteOpacityRight"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="nN9-g3-Kpw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="40f-SO-9JR"/>
+                <constraint firstAttribute="bottom" secondItem="nN9-g3-Kpw" secondAttribute="bottom" id="G6s-wN-0yc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KTK-V9-cx7" secondAttribute="trailing" id="TDF-Fz-jhc"/>
+                <constraint firstItem="KTK-V9-cx7" firstAttribute="leading" secondItem="nN9-g3-Kpw" secondAttribute="trailing" constant="3" id="XEe-AF-nGO"/>
+                <constraint firstItem="nN9-g3-Kpw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="e3G-ct-fms"/>
+                <constraint firstItem="KTK-V9-cx7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eu3-eZ-tgB"/>
+                <constraint firstAttribute="bottom" secondItem="KTK-V9-cx7" secondAttribute="bottom" id="jJG-a4-FvA"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="transparent"/>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+</document>

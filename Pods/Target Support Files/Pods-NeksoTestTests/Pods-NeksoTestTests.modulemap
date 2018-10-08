@@ -1,0 +1,6 @@
+framework module Pods_NeksoTestTests {
+  umbrella header "Pods-NeksoTestTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
