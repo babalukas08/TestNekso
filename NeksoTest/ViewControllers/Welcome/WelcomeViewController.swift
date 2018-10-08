@@ -28,21 +28,20 @@ class WelcomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configWelcomeView()
-        mapView.delegate = self
-        self.centerMapOnLocation(location: initialLocation)
-        self.drawPinLocation(location: initialLocation)
-        locManager.requestWhenInUseAuthorization()
         
+        mapView.delegate = self
+
+        locManager.requestWhenInUseAuthorization()
         var currentLocation: CLLocation!
         
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() ==  .authorizedAlways){
             
             currentLocation = locManager.location
+            self.centerMapOnLocation(location: currentLocation)
+            self.drawPinLocation(location: currentLocation)
             
         }
-        
-        print("\n\n currentLocation: \(currentLocation) \n\n")
     }
     
     func configWelcomeView() {
@@ -51,7 +50,7 @@ class WelcomeViewController: BaseViewController {
         }
         
         self.txtLabelWelcomeLabel.text = userModel.getWelcomeText()
-        self.markerUsername = "Location of " + userModel.getWelcomeText()
+        self.markerUsername = "Location of " + userModel.username
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -143,9 +142,8 @@ extension WelcomeViewController : CLLocationManagerDelegate {
         // other wise this function will be called every time when user location changes.
         
         // manager.stopUpdatingLocation()
-        
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
+        self.centerMapOnLocation(location: userLocation)
+        self.drawPinLocation(location: userLocation)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

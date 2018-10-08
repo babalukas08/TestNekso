@@ -263,7 +263,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="typeInput" value="email"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="you@yours.com"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="username or email"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baC-Gc-F78" customClass="InputView" customModule="NeksoTest" customModuleProvider="target">
