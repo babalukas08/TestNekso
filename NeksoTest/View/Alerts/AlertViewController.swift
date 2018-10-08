@@ -10,31 +10,30 @@ import UIKit
 
 public protocol AlertController {
 
-//    func showInputAlert(modelProgressAlertViewModel: AlertWithInputTextViewModel, delegate: AlertWithInputTextViewDelegate, typeAlert: TypeAlert) -> AlertWithInputTextView
+    func showInputAlert(modelProgressAlertViewModel: InfoMapViewModel) -> InfoMapView
 //    func showGenericSKuAlert(modelProgressAlertViewModel: GenericSkuModalViewModel, delegate: GenericSkuModalViewDelegate) -> GenericSkuModalView
 //    //GenericSkuModalView
 
 }
-
+// InfoMapView
 public extension AlertController where Self: UIViewController {
     
-//    @discardableResult func showGenericSKuAlert(modelProgressAlertViewModel: GenericSkuModalViewModel, delegate: GenericSkuModalViewDelegate) -> GenericSkuModalView {
-//        //sendEmail
-//        let modAlertSingleButton = GenericSkuModalView()
-//        modAlertSingleButton.delegate = delegate
-//        modAlertSingleButton.configure(model: modelProgressAlertViewModel)
-//        modAlertSingleButton.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        let hostViewController = AlertHostController()
-//        hostViewController.view.addSubview(modAlertSingleButton)
-//        
-//        let sizeModal = CGSize(width: Constants.devicesWidth.widthDevice, height: 475)
-//        
-//        setConstraintsForAlert(alert: modAlertSingleButton, containerView: hostViewController.view, size: sizeModal)
-//        self.present(hostViewController, animated: true, completion: nil)
-//        
-//        return modAlertSingleButton
-//    }
+    @discardableResult func showInputAlert(modelProgressAlertViewModel: InfoMapViewModel) -> InfoMapView {
+        let modAlertSingleButton = InfoMapView()
+        modAlertSingleButton.configure(modelGeneric: modelProgressAlertViewModel)
+        modAlertSingleButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let hostViewController = AlertHostController()
+        hostViewController.view.addSubview(modAlertSingleButton)
+        
+        let sizeModal = CGSize(width: Constants.devicesSize.widthDevice - 50, height: 200)
+        
+        setConstraintsForAlert(alert: modAlertSingleButton, containerView: hostViewController.view, size: sizeModal)
+        self.present(hostViewController, animated: true, completion: nil)
+        
+        return modAlertSingleButton
+
+    }
     
     func setConstraints(alert: UIView, containerView: UIView, size: CGSize? = nil, isTop: Bool? = nil) {
         alert.translatesAutoresizingMaskIntoConstraints = false

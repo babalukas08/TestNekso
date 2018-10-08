@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, AlertController {
     
     var manageKeyBoard = false
     var viewTapRecognizer: UITapGestureRecognizer?

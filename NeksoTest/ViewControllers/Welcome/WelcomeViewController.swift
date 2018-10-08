@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 
-
 class WelcomeViewController: BaseViewController {
 
     @IBOutlet var mapView: MKMapView!
@@ -17,38 +16,46 @@ class WelcomeViewController: BaseViewController {
     
     var idUserModel = ""
     var markerUsername = ""
-    // set initial location in Honolulu
-    let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-
+    var locationAddress = ""
     let regionRadius: CLLocationDistance = 1000
+    
+    lazy var userModel: UserModel = {
+       return UserModel()
+    }()
+    
+    lazy var currentLocation : CLLocation = {
+        return CLLocation()
+    }()
+    
     lazy var locManager : CLLocationManager = {
         return CLLocationManager()
-        }()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configWelcomeView()
-        
         mapView.delegate = self
 
         locManager.requestWhenInUseAuthorization()
-        var currentLocation: CLLocation!
         
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() ==  .authorizedAlways){
             
-            currentLocation = locManager.location
-            self.centerMapOnLocation(location: currentLocation)
-            self.drawPinLocation(location: currentLocation)
-            
+            if let currentLocationRequest = locManager.location {
+                self.currentLocation = currentLocationRequest
+                self.centerMapOnLocation(location: currentLocation)
+                self.drawPinLocation(location: currentLocation)
+                mapView.showsUserLocation = false
+            }
         }
     }
     
     func configWelcomeView() {
-        guard let userModel = DataSourceManager.getUserById(idUser: self.idUserModel) else {
+        guard let userModelDB = DataSourceManager.getUserById(idUser: self.idUserModel) else {
             return
         }
         
+        self.userModel = userModelDB
         self.txtLabelWelcomeLabel.text = userModel.getWelcomeText()
         self.markerUsername = "Location of " + userModel.username
     }
@@ -60,7 +67,7 @@ class WelcomeViewController: BaseViewController {
     }
     
     func drawPinLocation(location: CLLocation) {
-        // show artwork on map
+        // show current on map
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
             
@@ -78,10 +85,12 @@ class WelcomeViewController: BaseViewController {
             // Country
             let country = placeMark.country ?? ""
             
+            self.locationAddress = locationName + ", " + city + ", " + zip + ", " + country
             let artwork = PinLocationModel(title: self.markerUsername,
-                                           locationName: locationName + ", " + city + ", " + zip + ", " + country,
+                                           locationName: self.locationAddress,
                                            discipline: "",
                                            coordinate: location.coordinate)
+            
             self.mapView.addAnnotation(artwork)
         })
         
@@ -95,25 +104,13 @@ class WelcomeViewController: BaseViewController {
         
         if CLLocationManager.locationServicesEnabled() {
             locManager.startUpdatingLocation()
-            //locationManager.startUpdatingHeading()
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension WelcomeViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
         guard let annotation = annotation as? PinLocationModel else { return nil }
         let identifier = "marker"
         var view: MKMarkerAnnotationView
@@ -132,18 +129,22 @@ extension WelcomeViewController: MKMapViewDelegate {
         
         return view
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            let modelInfo = InfoMapViewModel(userModel: self.userModel, location: self.locationAddress)
+            self.showInputAlert(modelProgressAlertViewModel: modelInfo)
+        }
+    }
 }
 
 extension WelcomeViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        
-        // manager.stopUpdatingLocation()
         self.centerMapOnLocation(location: userLocation)
         self.drawPinLocation(location: userLocation)
+        //manager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

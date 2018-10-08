@@ -15,6 +15,7 @@ public enum ViewStyleSheet: String {
     case rounded
     case roundCorners
     case pinkOpacity
+    case necksoGreen
     case whiteOpacity
     case whiteOpacityLeft
     case whiteOpacityRight
@@ -46,6 +47,11 @@ public enum ViewStyleSheet: String {
         case .pinkOpacity:
             var viewStyle = ViewStyle()
             viewStyle.backgroundColor = ColorPallete.neksoPink.asColor(withAlpha: 0.40)
+            viewStyle.shape = ViewStyle.ViewShape.rect
+            return viewStyle
+        case .necksoGreen:
+            var viewStyle = ViewStyle()
+            viewStyle.backgroundColor = ColorPallete.neksoGreen.asColor()
             viewStyle.shape = ViewStyle.ViewShape.rect
             return viewStyle
         case .whiteOpacity:

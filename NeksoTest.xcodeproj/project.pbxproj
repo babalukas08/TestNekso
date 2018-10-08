@@ -55,6 +55,8 @@
 		0EE0744E216B9F160079D724 /* DynamicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0744D216B9F160079D724 /* DynamicViewModel.swift */; };
 		0EEF7469216931B5009DE4B9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF7468216931B5009DE4B9 /* WelcomeViewController.swift */; };
 		0EEF746B2169358E009DE4B9 /* PinLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF746A2169358E009DE4B9 /* PinLocationModel.swift */; };
+		0EF130DF216BD77300BCF4ED /* InfoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF130DE216BD77300BCF4ED /* InfoMapView.swift */; };
+		0EF130E1216BD8AA00BCF4ED /* InfoMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */; };
 		8D1F2DCFE8F9F432CE22735B /* Pods_NeksoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF92AE6053BD7BD6E4AC0C64 /* Pods_NeksoTest.framework */; };
 		DEBCC6D77606ED4B6560E56D /* Pods_NeksoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE8266AA5F8FA038BBA88CD /* Pods_NeksoTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +125,8 @@
 		0EE0744D216B9F160079D724 /* DynamicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewModel.swift; sourceTree = "<group>"; };
 		0EEF7468216931B5009DE4B9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0EEF746A2169358E009DE4B9 /* PinLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocationModel.swift; sourceTree = "<group>"; };
+		0EF130DE216BD77300BCF4ED /* InfoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMapView.swift; sourceTree = "<group>"; };
+		0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoMapView.xib; sourceTree = "<group>"; };
 		252A08F68FA70560CD07B5D6 /* Pods-NeksoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeksoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeksoTest/Pods-NeksoTest.release.xcconfig"; sourceTree = "<group>"; };
 		8DA133E0FD4C308B2BDC9BD1 /* Pods-NeksoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeksoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeksoTest/Pods-NeksoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CAE8266AA5F8FA038BBA88CD /* Pods_NeksoTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeksoTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				0EDF8DC421686390002EF388 /* AlertViewController.swift */,
+				0EF130DE216BD77300BCF4ED /* InfoMapView.swift */,
+				0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				0EDF8D61216845FB002EF388 /* LaunchScreen.storyboard in Resources */,
 				0EDF8DCF216882E8002EF388 /* InputView.xib in Resources */,
 				0EDF8D5E216845FB002EF388 /* Assets.xcassets in Resources */,
+				0EF130E1216BD8AA00BCF4ED /* InfoMapView.xib in Resources */,
 				0EDF8D5C216845F9002EF388 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +691,7 @@
 				0EDF8DBD21685959002EF388 /* CardBounceTransition.swift in Sources */,
 				0EE0744E216B9F160079D724 /* DynamicViewModel.swift in Sources */,
 				0EDF8DBC21685959002EF388 /* StylableTextView.swift in Sources */,
+				0EF130DF216BD77300BCF4ED /* InfoMapView.swift in Sources */,
 				0EDF8DB821685959002EF388 /* Heading.swift in Sources */,
 				0EDF8D912168592B002EF388 /* NibDesignable.swift in Sources */,
 				0EE07442216B9A450079D724 /* LoginViewModel.swift in Sources */,
