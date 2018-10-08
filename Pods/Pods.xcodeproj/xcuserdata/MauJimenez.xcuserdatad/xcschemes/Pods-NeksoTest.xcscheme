@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0CD7A1DC81C4AB3763886EA0695BC220"
+               BlueprintIdentifier = "1A1C25C90B443441F05FC1DAC510B460"
                BuildableName = "Pods_NeksoTest.framework"
                BlueprintName = "Pods-NeksoTest"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0CD7A1DC81C4AB3763886EA0695BC220"
+            BlueprintIdentifier = "1A1C25C90B443441F05FC1DAC510B460"
             BuildableName = "Pods_NeksoTest.framework"
             BlueprintName = "Pods-NeksoTest"
             ReferencedContainer = "container:Pods.xcodeproj">

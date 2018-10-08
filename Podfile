@@ -11,6 +11,9 @@ def basic_pods
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxGesture'
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
+
     end
 
 target 'NeksoTest' do

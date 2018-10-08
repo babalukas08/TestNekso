@@ -48,9 +48,11 @@ final class DataSourceManager {
         var allUsers = self.getUserFromDB(modelRealm: Constants.KeysRealmObject.RealmUserModel)
         
         if let indexEqual = self.getIndexbyModel(userModel: userModel)  {
+            userModel.sessionActive = true
             allUsers[indexEqual] = userModel
         }
         else {
+            userModel.sessionActive = true
             allUsers.append(userModel)
         }
         
@@ -68,6 +70,16 @@ final class DataSourceManager {
         }
         
         allUsers.remove(at: indexEqual)
+        
+        // this line is for update the userMode on Realm
+        completion(self.saveCacheModel(Constants.KeysRealmObject.RealmUserModel, value: allUsers.toJSONString() ?? ""))
+    }
+    
+    // Delete All users
+    static func deleteUserByModel(completion: @escaping (_ result: ManagerResult) -> Void) {
+        var allUsers = self.getUserFromDB(modelRealm: Constants.KeysRealmObject.RealmUserModel)
+
+        allUsers.removeAll()
         
         // this line is for update the userMode on Realm
         completion(self.saveCacheModel(Constants.KeysRealmObject.RealmUserModel, value: allUsers.toJSONString() ?? ""))

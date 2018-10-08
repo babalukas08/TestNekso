@@ -57,6 +57,7 @@
 		0EEF746B2169358E009DE4B9 /* PinLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF746A2169358E009DE4B9 /* PinLocationModel.swift */; };
 		0EF130DF216BD77300BCF4ED /* InfoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF130DE216BD77300BCF4ED /* InfoMapView.swift */; };
 		0EF130E1216BD8AA00BCF4ED /* InfoMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */; };
+		0EF130E5216BFCC600BCF4ED /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF130E4216BFCC600BCF4ED /* TestObserver.swift */; };
 		8D1F2DCFE8F9F432CE22735B /* Pods_NeksoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF92AE6053BD7BD6E4AC0C64 /* Pods_NeksoTest.framework */; };
 		DEBCC6D77606ED4B6560E56D /* Pods_NeksoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE8266AA5F8FA038BBA88CD /* Pods_NeksoTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,7 @@
 		0EEF746A2169358E009DE4B9 /* PinLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocationModel.swift; sourceTree = "<group>"; };
 		0EF130DE216BD77300BCF4ED /* InfoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMapView.swift; sourceTree = "<group>"; };
 		0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoMapView.xib; sourceTree = "<group>"; };
+		0EF130E4216BFCC600BCF4ED /* TestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
 		252A08F68FA70560CD07B5D6 /* Pods-NeksoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeksoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeksoTest/Pods-NeksoTest.release.xcconfig"; sourceTree = "<group>"; };
 		8DA133E0FD4C308B2BDC9BD1 /* Pods-NeksoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeksoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeksoTest/Pods-NeksoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CAE8266AA5F8FA038BBA88CD /* Pods_NeksoTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeksoTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,7 @@
 		0EDF8D6A216845FB002EF388 /* NeksoTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				0EF130E3216BFC8D00BCF4ED /* UtilsTest */,
 				0EDF8D6B216845FB002EF388 /* NeksoTestTests.swift */,
 				0EDF8D6D216845FB002EF388 /* Info.plist */,
 			);
@@ -440,6 +443,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		0EF130E3216BFC8D00BCF4ED /* UtilsTest */ = {
+			isa = PBXGroup;
+			children = (
+				0EF130E4216BFCC600BCF4ED /* TestObserver.swift */,
+			);
+			path = UtilsTest;
+			sourceTree = "<group>";
+		};
 		AB286C4660BEE73123DBF2F3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,18 +620,22 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -637,18 +652,22 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -714,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDF8D6C216845FB002EF388 /* NeksoTestTests.swift in Sources */,
+				0EF130E5216BFCC600BCF4ED /* TestObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
