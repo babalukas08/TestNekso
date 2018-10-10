@@ -8,9 +8,6 @@
 
 import XCTest
 import ObjectMapper
-import RxSwift
-import RxTest
-import RxBlocking
 
 @testable import NeksoTest
 
