@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E03E060216F9E4800B2D4CB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF13102216E3EB200BCF4ED /* XCTest.framework */; };
+		0E03E062216F9E5500B2D4CB /* XCTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0EF13102216E3EB200BCF4ED /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0E95C770216926B100A422A9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E95C76F216926B100A422A9 /* RegisterViewController.swift */; };
 		0EDF8D57216845F9002EF388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDF8D56216845F9002EF388 /* AppDelegate.swift */; };
 		0EDF8D59216845F9002EF388 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDF8D58216845F9002EF388 /* ViewController.swift */; };
@@ -57,7 +59,6 @@
 		0EEF746B2169358E009DE4B9 /* PinLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF746A2169358E009DE4B9 /* PinLocationModel.swift */; };
 		0EF130DF216BD77300BCF4ED /* InfoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF130DE216BD77300BCF4ED /* InfoMapView.swift */; };
 		0EF130E1216BD8AA00BCF4ED /* InfoMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */; };
-		0EF130E5216BFCC600BCF4ED /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF130E4216BFCC600BCF4ED /* TestObserver.swift */; };
 		0EF13103216E3EB200BCF4ED /* XCTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0EF13102216E3EB200BCF4ED /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D1F2DCFE8F9F432CE22735B /* Pods_NeksoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF92AE6053BD7BD6E4AC0C64 /* Pods_NeksoTest.framework */; };
 		DEBCC6D77606ED4B6560E56D /* Pods_NeksoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE8266AA5F8FA038BBA88CD /* Pods_NeksoTestTests.framework */; };
@@ -74,6 +75,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0E03E061216F9E4B00B2D4CB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E03E062216F9E5500B2D4CB /* XCTest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EF13101216E3E8300BCF4ED /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,7 +153,6 @@
 		0EEF746A2169358E009DE4B9 /* PinLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocationModel.swift; sourceTree = "<group>"; };
 		0EF130DE216BD77300BCF4ED /* InfoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMapView.swift; sourceTree = "<group>"; };
 		0EF130E0216BD8AA00BCF4ED /* InfoMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoMapView.xib; sourceTree = "<group>"; };
-		0EF130E4216BFCC600BCF4ED /* TestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
 		0EF13102216E3EB200BCF4ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		252A08F68FA70560CD07B5D6 /* Pods-NeksoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeksoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeksoTest/Pods-NeksoTest.release.xcconfig"; sourceTree = "<group>"; };
 		8DA133E0FD4C308B2BDC9BD1 /* Pods-NeksoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeksoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeksoTest/Pods-NeksoTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E03E060216F9E4800B2D4CB /* XCTest.framework in Frameworks */,
 				DEBCC6D77606ED4B6560E56D /* Pods_NeksoTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +473,6 @@
 		0EF130E3216BFC8D00BCF4ED /* UtilsTest */ = {
 			isa = PBXGroup;
 			children = (
-				0EF130E4216BFCC600BCF4ED /* TestObserver.swift */,
 			);
 			path = UtilsTest;
 			sourceTree = "<group>";
@@ -519,6 +529,7 @@
 				0EDF8D64216845FB002EF388 /* Frameworks */,
 				0EDF8D65216845FB002EF388 /* Resources */,
 				D28EC5E1B53389049DE91BF2 /* [CP] Embed Pods Frameworks */,
+				0E03E061216F9E4B00B2D4CB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -736,7 +747,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDF8D6C216845FB002EF388 /* NeksoTestTests.swift in Sources */,
-				0EF130E5216BFCC600BCF4ED /* TestObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

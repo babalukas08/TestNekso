@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import ObjectMapper
 
 @testable import NeksoTest
 
@@ -67,22 +66,24 @@ class NeksoTestTests: XCTestCase {
             case .failure(let message):
                 XCTAssert(false, message)
             case .success:
-                self.testLoginSuccess()
+                self.sendLoginSuccess(completion: { (result) in
+                    XCTAssert(result, "result login")
+                })
             }
         }
     }
     
     // MARK: - Login Tests
-    func testLoginSuccess() {
+    func sendLoginSuccess(completion: @escaping (_ result: Bool) -> Void) {
         self.userModelTest = registerSuccessRequestModel
         let login = LoginViewModel(txtUsernameOrEmail: self.userModelTest.username, txtPass: self.userModelTest.password)
         
         self.loginAction(loginModel: login) { (result) in
             switch result {
-            case .failure(let message):
-                XCTAssert(false, message)
+            case .failure( _):
+                completion(false)
             case .success:
-                XCTAssert(true, "Successful Login")
+                completion(true)
             }
         }
     }
